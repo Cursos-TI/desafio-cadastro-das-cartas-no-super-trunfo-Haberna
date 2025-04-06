@@ -1,22 +1,36 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+typedef struct {
+    char codigo[4];
+    int populacao;
+    float area;
+    float pib;
+    int pontosTuristicos;
+} Carta;
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    Carta cartas[8][4] = {
+        {{"A1", 100000, 150.5, 2000.0, 10}, {"A2", 120000, 160.2, 2500.0, 12}, {"A3", 90000, 140.0, 1900.0, 8}, {"A4", 110000, 145.3, 2100.0, 9}},
+        {{"B1", 130000, 170.5, 3000.0, 15}, {"B2", 80000, 130.2, 1800.0, 7}, {"B3", 95000, 155.0, 2200.0, 11}, {"B4", 115000, 160.3, 2400.0, 13}},
+        {{"C1", 75000, 100.0, 1500.0, 6}, {"C2", 92000, 120.5, 1800.0, 8}, {"C3", 67000, 110.0, 1400.0, 5}, {"C4", 85000, 135.0, 1700.0, 7}},
+        {{"D1", 140000, 180.5, 3500.0, 16}, {"D2", 125000, 150.0, 2700.0, 14}, {"D3", 102000, 165.0, 2300.0, 12}, {"D4", 98000, 140.0, 2100.0, 10}},
+        {{"E1", 88000, 95.0, 1600.0, 6}, {"E2", 76000, 90.5, 1300.0, 5}, {"E3", 94000, 115.0, 1800.0, 9}, {"E4", 97000, 120.3, 2000.0, 11}},
+        {{"F1", 67000, 85.5, 1200.0, 3}, {"F2", 89000, 115.5, 1900.0, 10}, {"F3", 92000, 130.0, 2200.0, 13}, {"F4", 81000, 100.0, 1500.0, 8}},
+        {{"G1", 143000, 195.5, 3800.0, 18}, {"G2", 120000, 185.0, 3300.0, 15}, {"G3", 97000, 165.0, 2700.0, 12}, {"G4", 109000, 150.3, 3000.0, 14}},
+        {{"H1", 101000, 160.5, 2500.0, 12}, {"H2", 95000, 145.2, 2200.0, 10}, {"H3", 89000, 130.0, 2000.0, 9}, {"H4", 78000, 120.5, 1700.0, 7}}
+    };
+
+    // Exibe as cartas cadastradas
+    printf("\nCartas Pré-cadastradas:\n");
+    for (int estado = 0; estado < 8; estado++) {
+        for (int cidade = 0; cidade < 4; cidade++) {
+            printf("Código: %s\n", cartas[estado][cidade].codigo);
+            printf("População: %d\n", cartas[estado][cidade].populacao);
+            printf("Área: %.2f\n", cartas[estado][cidade].area);
+            printf("PIB: %.2f\n", cartas[estado][cidade].pib);
+            printf("Pontos turísticos: %d\n\n", cartas[estado][cidade].pontosTuristicos);
+        }
+    }
 
     return 0;
 }
